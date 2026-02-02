@@ -1,80 +1,62 @@
 <!DOCTYPE html>
-<html lang="en" class="" style="height: auto;">
-<?php require_once('config.php'); ?>
- <?php require_once('inc/header.php') ?>
-  <body class="hold-transition layout-top-nav" >
-     <?php $page = isset($_GET['page']) ? $_GET['page'] : 'portal';  ?>
-     <?php require_once('inc/topBarNav.php') ?>
-     <?php 
-        if(!file_exists($page.".php") && !is_dir($page)){
-            include '404.html';
-        }else{
-          if(is_dir($page))
-            include $page.'/index.php';
-          else
-            include $page.'.php';
+<html lang="en">
 
-        }
-      ?>
-       <script>
-        $(function(){
-          if($('header.masthead').lengt <= 0)
-            $('#mainNav').addClass('navbar-shrink')
-        })
-      </script>
-      <?php require_once('inc/footer.php') ?>
-      <div class="modal fade text-dark" id="confirm_modal" role='dialog'>
-    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title">Confirmation</h5>
-      </div>
-      <div class="modal-body">
-        <div id="delete_content"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continue</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-      </div>
+<head>
+    <title>HMS</title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Art Sign Up Form Responsive Widget, Audio and Video players, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates,
+		Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+    />
+    <!-- /meta tags -->
+    <!-- custom style sheet -->
+    <link href="web/css/style.css" rel="stylesheet" type="text/css" />
+    <!-- /custom style sheet -->
+    <!-- fontawesome css -->
+    <link href="web/css/fontawesome-all.css" rel="stylesheet" />
+    <!-- /fontawesome css -->
+    <!-- google fonts-->
+    <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <!-- /google fonts-->
+
+</head>
+
+
+<body>
+    <h1>Hostel Room Allocation System</h1>
+    <div class=" w3l-login-form">
+        <h2>Student Login</h2>
+        <form action="includes/login.inc.php" method="POST">
+
+            <div class=" w3l-form-group">
+                <label>Student Roll No:</label>
+                <div class="group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" name="student_roll_no" placeholder="Roll No" required="required" />
+                </div>
+            </div>
+            <div class=" w3l-form-group">
+                <label>Password:</label>
+                <div class="group">
+                    <i class="fas fa-unlock"></i>
+                    <input type="password" class="form-control" name="pwd" placeholder="Password" required="required" />
+                </div>
+            </div>
+            <!--<div class="forgot">
+                <a href="#">Forgot Password?</a>
+                <p><input type="checkbox">Remember Me</p>
+            </div>-->
+            <button type="submit" name="login-submit">Login</button>
+        </form>
+          <p class=" w3l-register-p">Login as<a href="login-hostel_manager.php" class="register"> Hostel-Manager/Admin</a></p>
+        <p class=" w3l-register-p">Don't have an account?<a href="signup.php" class="register"> Sign up</a></p>
     </div>
-  </div>
-  <div class="modal fade text-dark rounded-0" id="uni_modal" role='dialog'>
-    <div class="modal-dialog modal-md modal-dialog-centered" role="document">
-      <div class="modal-content rounded-0">
-        <div class="modal-header">
-        <h5 class="modal-title"></h5>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='submit' onclick="$('#uni_modal form').submit()">Save</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade text-dark" id="uni_modal_right" role='dialog'>
-    <div class="modal-dialog modal-full-height  modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h5 class="modal-title"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span class="fa fa-arrow-right"></span>
-        </button>
-      </div>
-      <div class="modal-body">
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade text-dark" id="viewer_modal" role='dialog'>
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-              <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
-              <img src="" alt="">
-      </div>
-    </div>
-  </div> 
-  </body>
+    <footer>
+        <p class="copyright-agileinfo"> &copy; 2018 DBMS Project. All Rights Reserved | Design by <a href="https://www.linkedin.com/in/bharat-reddy/">Bharat-Prajwal-Rakesh</a></p>
+    </footer>
+
+</body>
+
 </html>
